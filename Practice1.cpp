@@ -14,93 +14,273 @@ using std::cout, std::cin;
 */
 struct Inventory
 {
-    int platinum[catSize];   // 20 per metal representing m^3 of area (volume)
-    int gold[catSize];
-    int diamond[catSize];
-    int silver[catSize];
-    int copper[catSize];
-};
+    int platinum {};   // 20 per metal representing m^3 of area (volume)
+    int gold {};
+    int diamond {};
+    int silver {};
+    int copper {};
+}; 
 
 enum Metals {
-    PLATINUM=1,
+    EXIT,
+    PLATINUM,
     GOLD,
     DIAMOND,
     SILVER,
-    COPPER,
-    EXIT
+    COPPER
 };
 
 
 int main() {
 
-    int choice{}; 
+    int choice {}; 
     Inventory g;
 
-    cout << "Welcome to Ray's Inventory\n";
-    cout << "Please select the precious metal you wish to deposit or withdraw from:\n";
-    cout << "1. Platinum\n";
-    cout << "2. Gold\n";
-    cout << "3. Diamond\n";
-    cout << "4. Silver\n";
-    cout << "5. Copper\n";
-    cout << "\n6. EXIT\n";
-
-    while (choice != EXIT)
+    while (true)
     {
+
+        cout << "Welcome to Ray's Inventory\n";
+        cout << "Please select the precious metal you wish to deposit or withdraw from:\n";
+        cout << "1. Platinum\n";
+        cout << "2. Gold\n";
+        cout << "3. Diamond\n";
+        cout << "4. Silver\n";
+        cout << "5. Copper\n";
+        cout << "0. EXIT\n";
         cout << "Enter your choice: ";
         cin >> choice;
-        std::cin.ignore(1000, '\n');
+        
+        if (cin.fail()) {
+             cin.clear(); // clear fail state
+             cin.ignore(1000, '\n'); // discard bad input
+             cout << "Invalid input. Please enter a number.\n";
+        }
+    
+        else 
+        {
 
-    switch (choice)
-    {
-    case PLATINUM:
+        switch (choice) 
         {
-            int balance {};
-            balance = sizeof(g.platinum)/sizeof(g.platinum[0]);
-            cout << "Available Size in Cubic Meters is: " << balance << '\n';
-            cout << "";
+
+        case PLATINUM:
+        {
+            while (true)
+            {
+            int choice1 {};
+            cout << "\nCurrent Balance is " << g.platinum;
+            cout << "\nDo you want to deposit or withdraw? ";
+            cout << "\n1. Deposit";
+            cout << "\n2. Withdraw";
+            cout << "\n3. Main Menu";
+            cout << "\nChoice: ";
+            cin >> choice1;
+            
+            if (choice1 == 1)
+            {
+                int depoAmt {};
+                cout << "\nEnter deposit amount: ";
+                cin >> depoAmt;
+
+                g.platinum =+ depoAmt;
+                cout << "\nNew Balance: " << g.platinum << '\n';
+
+            }
+
+            if (choice1 == 2)
+            {
+                int withdrawAmt {};
+                cout << "\nEnter amount to withdraw: ";
+                cin >> withdrawAmt;
+                g.platinum =- withdrawAmt;
+                cout << "\nNew Balance: " << g.platinum << '\n';
+            }
+
+            if (choice1 == 3)
+            {
+                break;
+            }
+        }
+
             break;
         }
-    case GOLD:
+        case GOLD:
         {
-            int balance {};
-            balance = sizeof(g.gold)/sizeof(g.gold[0]);
-            cout << "Available Size in Cubic Meters is: " << balance << '\n';
+
+            while (true)
+            {
+            int choice1 {};
+            cout << "\nCurrent Balance is " << g.gold;
+            cout << "\nDo you want to deposit or withdraw? ";
+            cout << "\n1. Deposit";
+            cout << "\n2. Withdraw";
+            cout << "\n3. Main Menu";
+            cout << "\nChoice: ";
+            cin >> choice1;
+            
+            if (choice1 == 1)
+            {
+                int depoAmt {};
+                cout << "\nEnter deposit amount: ";
+                cin >> depoAmt;
+
+                g.gold =+ depoAmt;
+                cout << "\nNew Balance: " << g.gold << '\n';
+
+            }
+
+            if (choice1 == 2)
+            {
+                int withdrawAmt {};
+                cout << "\nEnter amount to withdraw: ";
+                cin >> withdrawAmt;
+                g.gold =- withdrawAmt;
+                cout << "\nNew Balance: " << g.gold << '\n';
+            }
+
+            if (choice1 == 3)
+            {
+                break;
+            }
+        }
+
             break;
         }
-    case DIAMOND:
-        {   int balance {};
-            balance = sizeof(g.diamond)/sizeof(g.diamond[0]);
-            cout << "Available Size in Cubic Meters is: " << balance << '\n';
+        case DIAMOND:
+        {   
+
+            while (true)
+            {
+            int choice1 {};
+            cout << "\nCurrent Balance is " << g.diamond;
+            cout << "\nDo you want to deposit or withdraw? ";
+            cout << "\n1. Deposit";
+            cout << "\n2. Withdraw";
+            cout << "\n3. Main Menu";
+            cout << "\nChoice: ";
+            cin >> choice1;
+            
+            if (choice1 == 1)
+            {
+                int depoAmt {};
+                cout << "\nEnter deposit amount: ";
+                cin >> depoAmt;
+
+                g.diamond =+ depoAmt;
+                cout << "\nNew Balance: " << g.diamond << '\n';
+
+            }
+
+            if (choice1 == 2)
+            {
+                int withdrawAmt {};
+                cout << "\nEnter amount to withdraw: ";
+                cin >> withdrawAmt;
+                g.diamond =- withdrawAmt;
+                cout << "\nNew Balance: " << g.diamond << '\n';
+            }
+
+            if (choice1 == 3)
+            {
+                break;
+            }
+        }
+
             break;
         }   
-    case SILVER:
+        case SILVER:
         {
-            int balance {};
-            balance = sizeof(g.silver)/sizeof(g.copper[0]);
-            cout << "Available Size in Cubic Meters is: " << balance << '\n';
-            break;
-        }
-    case COPPER:
-        {
-            int balance {};
-            balance = sizeof(g.copper)/sizeof(g.copper[0]);
-            cout << "Available Size in Cubic Meters is: " << balance << '\n';
-            break;
-        }
-    case EXIT:
-        {
-            exit;
-            break;
+
+            while (true)
+            {
+            int choice1 {};
+            cout << "\nCurrent Balance is " << g.silver;
+            cout << "\nDo you want to deposit or withdraw? ";
+            cout << "\n1. Deposit";
+            cout << "\n2. Withdraw";
+            cout << "\n3. Main Menu";
+            cout << "\nChoice: ";
+            cin >> choice1;
+            
+            if (choice1 == 1)
+            {
+                int depoAmt {};
+                cout << "\nEnter deposit amount: ";
+                cin >> depoAmt;
+
+                g.silver =+ depoAmt;
+                cout << "\nNew Balance: " << g.silver << '\n';
+
+            }
+
+            if (choice1 == 2)
+            {
+                int withdrawAmt {};
+                cout << "\nEnter amount to withdraw: ";
+                cin >> withdrawAmt;
+                g.silver =- withdrawAmt;
+                cout << "\nNew Balance: " << g.silver << '\n';
+            }
+
+            if (choice1 == 3)
+            {
+                break;
+            }
         }
 
-    default:
+            break;
+        }
+        case COPPER:
+        {
+
+            while (true)
+            {
+            int choice1 {};
+            cout << "\nCurrent Balance is " << g.copper;
+            cout << "\nDo you want to deposit or withdraw? ";
+            cout << "\n1. Deposit";
+            cout << "\n2. Withdraw";
+            cout << "\n3. Main Menu";
+            cout << "\nChoice: ";
+            cin >> choice1;
+            
+            if (choice1 == 1)
+            {
+                int depoAmt {};
+                cout << "\nEnter deposit amount: ";
+                cin >> depoAmt;
+
+                g.copper =+ depoAmt;
+                cout << "\nNew Balance: " << g.copper << '\n';
+
+            }
+
+            if (choice1 == 2)
+            {
+                int withdrawAmt {};
+                cout << "\nEnter amount to withdraw: ";
+                cin >> withdrawAmt;
+                g.copper =- withdrawAmt;
+                cout << "\nNew Balance: " << g.copper << '\n';
+            }
+
+            if (choice1 == 3)
+            {
+                break;
+            }
+        }
+
+            break;
+        }
+        case EXIT:
+        {
+            return 0;
+        }
+        default:
         {
         cout << "\nPlease select a NUMBER between 1-5!\n";
         break;
         }
+    }
 }
     }
-
-    return 0;
 }
