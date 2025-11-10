@@ -64,9 +64,9 @@ int main() {
 
         case PLATINUM:
         {
+            int choice1 {};
             while (true)
             {
-            int choice1 {};
             cout << "\nCurrent Balance is " << g.platinum;
             cout << "\nDo you want to deposit or withdraw? ";
             cout << "\n1. Deposit";
@@ -74,6 +74,13 @@ int main() {
             cout << "\n3. Main Menu";
             cout << "\nChoice: ";
             cin >> choice1;
+
+            if (cin.fail()) 
+            {
+             cin.clear(); // clear fail state
+             cin.ignore(1000, '\n'); // discard bad input
+             cout << "Invalid input. Please enter a number.\n";
+            }
             
             if (choice1 == 1)
             {
@@ -81,23 +88,28 @@ int main() {
                 cout << "\nEnter deposit amount: ";
                 cin >> depoAmt;
 
-                g.platinum =+ depoAmt;
+                g.platinum += depoAmt;
                 cout << "\nNew Balance: " << g.platinum << '\n';
 
             }
 
-            if (choice1 == 2)
+            else if (choice1 == 2)
             {
                 int withdrawAmt {};
                 cout << "\nEnter amount to withdraw: ";
                 cin >> withdrawAmt;
-                g.platinum =- withdrawAmt;
+                g.platinum -= withdrawAmt;
                 cout << "\nNew Balance: " << g.platinum << '\n';
             }
 
-            if (choice1 == 3)
+            else if (choice1 == 3)
             {
                 break;
+            }
+
+            else
+            {
+                cout << "\nPlease enter a number between 1-3!\n";
             }
         }
 
@@ -106,9 +118,9 @@ int main() {
         case GOLD:
         {
 
+            int choice1 {};
             while (true)
             {
-            int choice1 {};
             cout << "\nCurrent Balance is " << g.gold;
             cout << "\nDo you want to deposit or withdraw? ";
             cout << "\n1. Deposit";
@@ -117,29 +129,39 @@ int main() {
             cout << "\nChoice: ";
             cin >> choice1;
             
+            if (cin.fail()) {
+             cin.clear(); // clear fail state
+             cin.ignore(1000, '\n'); // discard bad input
+             cout << "Invalid input. Please enter a number.\n";
+        }
             if (choice1 == 1)
             {
                 int depoAmt {};
                 cout << "\nEnter deposit amount: ";
                 cin >> depoAmt;
 
-                g.gold =+ depoAmt;
+                g.gold += depoAmt;
                 cout << "\nNew Balance: " << g.gold << '\n';
 
             }
 
-            if (choice1 == 2)
+            else if (choice1 == 2)
             {
                 int withdrawAmt {};
                 cout << "\nEnter amount to withdraw: ";
                 cin >> withdrawAmt;
-                g.gold =- withdrawAmt;
+                g.gold -= withdrawAmt;
                 cout << "\nNew Balance: " << g.gold << '\n';
             }
 
-            if (choice1 == 3)
+            else if (choice1 == 3)
             {
                 break;
+            }
+
+            else
+            {
+                cout << "\nPlease enter a number between 1-3!\n";
             }
         }
 
@@ -147,10 +169,9 @@ int main() {
         }
         case DIAMOND:
         {   
-
+            int choice1 {};
             while (true)
             {
-            int choice1 {};
             cout << "\nCurrent Balance is " << g.diamond;
             cout << "\nDo you want to deposit or withdraw? ";
             cout << "\n1. Deposit";
@@ -165,7 +186,7 @@ int main() {
                 cout << "\nEnter deposit amount: ";
                 cin >> depoAmt;
 
-                g.diamond =+ depoAmt;
+                g.diamond += depoAmt;
                 cout << "\nNew Balance: " << g.diamond << '\n';
 
             }
@@ -175,7 +196,7 @@ int main() {
                 int withdrawAmt {};
                 cout << "\nEnter amount to withdraw: ";
                 cin >> withdrawAmt;
-                g.diamond =- withdrawAmt;
+                g.diamond -= withdrawAmt;
                 cout << "\nNew Balance: " << g.diamond << '\n';
             }
 
@@ -190,9 +211,9 @@ int main() {
         case SILVER:
         {
 
+            int choice1 {};
             while (true)
             {
-            int choice1 {};
             cout << "\nCurrent Balance is " << g.silver;
             cout << "\nDo you want to deposit or withdraw? ";
             cout << "\n1. Deposit";
@@ -207,7 +228,7 @@ int main() {
                 cout << "\nEnter deposit amount: ";
                 cin >> depoAmt;
 
-                g.silver =+ depoAmt;
+                g.silver += depoAmt;
                 cout << "\nNew Balance: " << g.silver << '\n';
 
             }
@@ -217,7 +238,7 @@ int main() {
                 int withdrawAmt {};
                 cout << "\nEnter amount to withdraw: ";
                 cin >> withdrawAmt;
-                g.silver =- withdrawAmt;
+                g.silver -= withdrawAmt;
                 cout << "\nNew Balance: " << g.silver << '\n';
             }
 
@@ -232,9 +253,9 @@ int main() {
         case COPPER:
         {
 
+            int choice1 {};
             while (true)
             {
-            int choice1 {};
             cout << "\nCurrent Balance is " << g.copper;
             cout << "\nDo you want to deposit or withdraw? ";
             cout << "\n1. Deposit";
@@ -249,7 +270,7 @@ int main() {
                 cout << "\nEnter deposit amount: ";
                 cin >> depoAmt;
 
-                g.copper =+ depoAmt;
+                g.copper += depoAmt;
                 cout << "\nNew Balance: " << g.copper << '\n';
 
             }
@@ -259,7 +280,7 @@ int main() {
                 int withdrawAmt {};
                 cout << "\nEnter amount to withdraw: ";
                 cin >> withdrawAmt;
-                g.copper =- withdrawAmt;
+                g.copper -= withdrawAmt;
                 cout << "\nNew Balance: " << g.copper << '\n';
             }
 
