@@ -12,22 +12,17 @@ using std::cout, std::cin;
 
 
 */
+
+void displayMenu1();
+void displayMenu2();
+
 struct Inventory
 {
-    int platinum {};   // 20 per metal representing m^3 of area (volume)
-    int gold {};
-    int diamond {};
-    int silver {};
-    int copper {};
+    int platinum {}, gold {}, diamond {}, silver {}, copper {};
 }; 
 
 enum Metals {
-    EXIT,
-    PLATINUM,
-    GOLD,
-    DIAMOND,
-    SILVER,
-    COPPER
+    EXIT, PLATINUM, GOLD, DIAMOND, SILVER, COPPER
 };
 
 
@@ -41,14 +36,7 @@ int main() {
     while (true)
     {
 
-        cout << "\nPlease select the prescious metal you wish to deposit or withdraw from:\n";
-        cout << "1. Platinum\n";
-        cout << "2. Gold\n";
-        cout << "3. Diamond\n";
-        cout << "4. Silver\n";
-        cout << "5. Copper\n";
-        cout << "0. EXIT\n";
-        cout << "Enter your choice: ";
+        displayMenu1();
         cin >> choice;
         
         if (cin.fail()) {
@@ -342,4 +330,25 @@ int main() {
     }
 }
     }
+}
+
+void displayMenu1() {
+
+    cout << "Welcome to Ray's Inventory\n"
+         << "Please select the precious metal you wish to deposit or withdraw from:\n"
+         << "1. Platinum\n"
+         << "2. Gold\n"
+         << "3. Diamond\n"
+         << "4. Silver\n"
+         << "5. Copper\n"
+         << "0. EXIT\n"
+         << "Enter your choice: ";
+}
+
+void displayMenu2() {
+    cout << "\nDo you want to deposit or withdraw? "
+         << "\n1. Deposit";
+            cout << "\n2. Withdraw";
+            cout << "\n3. Main Menu";
+            cout << "\nChoice: ";
 }
