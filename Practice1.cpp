@@ -36,11 +36,12 @@ int main() {
     int choice {}; 
     Inventory g;
 
+    cout << "Welcome to Ray's Inventory\n";
+
     while (true)
     {
 
-        cout << "Welcome to Ray's Inventory\n";
-        cout << "Please select the prescious metal you wish to deposit or withdraw from:\n";
+        cout << "\nPlease select the prescious metal you wish to deposit or withdraw from:\n";
         cout << "1. Platinum\n";
         cout << "2. Gold\n";
         cout << "3. Diamond\n";
@@ -181,7 +182,14 @@ int main() {
             cout << "\nChoice: ";
             cin >> choice1;
             
-            if (choice1 == 1)
+            if (cin.fail()) 
+            {
+             cin.clear(); // clear fail state
+             cin.ignore(1000, '\n'); // discard bad input
+             cout << "Invalid input. Please enter a number.\n";
+            }
+
+            else if (choice1 == 1)
             {
                 int depoAmt {};
                 cout << "\nEnter deposit amount: ";
@@ -192,7 +200,7 @@ int main() {
 
             }
 
-            if (choice1 == 2)
+            else if (choice1 == 2)
             {
                 int withdrawAmt {};
                 cout << "\nEnter amount to withdraw: ";
@@ -200,10 +208,15 @@ int main() {
                 g.diamond -= withdrawAmt;
                 cout << "\nNew Balance: " << g.diamond << '\n';
             }
-
-            if (choice1 == 3)
+            
+            else if (choice1 == 3)
             {
                 break;
+            }
+
+            else
+            {
+                cout << "\nPlease enter a number between 1-3!\n";
             }
         }
 
@@ -223,7 +236,14 @@ int main() {
             cout << "\nChoice: ";
             cin >> choice1;
             
-            if (choice1 == 1)
+            if (cin.fail()) 
+            {
+             cin.clear(); // clear fail state
+             cin.ignore(1000, '\n'); // discard bad input
+             cout << "Invalid input. Please enter a number.\n";
+            }
+
+            else if (choice1 == 1)
             {
                 int depoAmt {};
                 cout << "\nEnter deposit amount: ";
@@ -243,9 +263,14 @@ int main() {
                 cout << "\nNew Balance: " << g.silver << '\n';
             }
 
-            if (choice1 == 3)
+            else if (choice1 == 3)
             {
                 break;
+            }
+
+            else
+            {
+                cout << "\nPlease enter a number between 1-3!\n";
             }
         }
 
@@ -265,7 +290,14 @@ int main() {
             cout << "\nChoice: ";
             cin >> choice1;
             
-            if (choice1 == 1)
+            if (cin.fail()) 
+            {
+             cin.clear(); // clear fail state
+             cin.ignore(1000, '\n'); // discard bad input
+             cout << "Invalid input. Please enter a number.\n";
+            }
+
+            else if (choice1 == 1)
             {
                 int depoAmt {};
                 cout << "\nEnter deposit amount: ";
@@ -276,7 +308,7 @@ int main() {
 
             }
 
-            if (choice1 == 2)
+            else if (choice1 == 2)
             {
                 int withdrawAmt {};
                 cout << "\nEnter amount to withdraw: ";
@@ -285,9 +317,14 @@ int main() {
                 cout << "\nNew Balance: " << g.copper << '\n';
             }
 
-            if (choice1 == 3)
+            else if (choice1 == 3)
             {
                 break;
+            }
+
+            else
+            {
+                cout << "\nPlease enter a number between 1-3!\n";
             }
         }
 
