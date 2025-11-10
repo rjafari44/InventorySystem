@@ -40,7 +40,7 @@ int main() {
     {
 
         cout << "Welcome to Ray's Inventory\n";
-        cout << "Please select the precious metal you wish to deposit or withdraw from:\n";
+        cout << "Please select the prescious metal you wish to deposit or withdraw from:\n";
         cout << "1. Platinum\n";
         cout << "2. Gold\n";
         cout << "3. Diamond\n";
@@ -53,7 +53,7 @@ int main() {
         if (cin.fail()) {
              cin.clear(); // clear fail state
              cin.ignore(1000, '\n'); // discard bad input
-             cout << "Invalid input. Please enter a number.\n";
+             cout << "\nInvalid input. Please enter a number.\n";
         }
     
         else 
@@ -82,7 +82,7 @@ int main() {
              cout << "Invalid input. Please enter a number.\n";
             }
             
-            if (choice1 == 1)
+            else if (choice1 == 1)
             {
                 int depoAmt {};
                 cout << "\nEnter deposit amount: ";
@@ -133,8 +133,9 @@ int main() {
              cin.clear(); // clear fail state
              cin.ignore(1000, '\n'); // discard bad input
              cout << "Invalid input. Please enter a number.\n";
-        }
-            if (choice1 == 1)
+            }
+
+            else if (choice1 == 1)
             {
                 int depoAmt {};
                 cout << "\nEnter deposit amount: ";
