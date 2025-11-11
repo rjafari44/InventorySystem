@@ -47,33 +47,26 @@ int main() {
     } else {
 
       switch (metalChoice) {
-        case PLATINUM: {
+        case PLATINUM:
           someFunc(g.platinum);
           break;
-        }
-        case GOLD: {
+        case GOLD:
           someFunc(g.gold);
           break;
-        }
-        case DIAMOND: {
+        case DIAMOND:
           someFunc(g.diamond);
           break;
-        }
-        case SILVER: {
+        case SILVER:
           someFunc(g.silver);
           break;
-        }
-        case COPPER: {
+        case COPPER:
           someFunc(g.copper);
           break;
-        }
-        case EXIT: {
+        case EXIT:
           return 0;
-        }
-        default: {
+        default:
           cout << "\nPlease select a NUMBER between 1-5!\n";
           break;
-        }
       }
     }
   }
