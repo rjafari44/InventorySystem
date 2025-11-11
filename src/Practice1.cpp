@@ -1,6 +1,5 @@
 #include <iostream>
 
-const int catSize {20}; // Category Size for each precious metaL in m^3.
 using std::cout, std::cin;
 
 /*
