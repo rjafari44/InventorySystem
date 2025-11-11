@@ -29,6 +29,7 @@ enum Operation {
 void displayMenu1();
 void displayMenu2();
 bool isValidDeposit(int depoAmt, int currentBalance);
+bool isValidWithdrawal(int withdrawAmt, int currentBalance);
 
 int main() {
 
@@ -76,7 +77,7 @@ int main() {
                 if (cin.fail()) {
                     cin.clear(); // clear fail state
                     cin.ignore(1000, '\n'); // discard bad input
-                    cout << "Invalid input. Please enter a number.\n";
+                    cout << "\nInvalid input. Please enter a number.\n";
                 } else {
                     if (isValidDeposit(depoAmt, g.platinum)) {
                         g.platinum += depoAmt;
@@ -91,9 +92,19 @@ int main() {
                 int withdrawAmt {};
                 cout << "\nEnter amount to withdraw: ";
                 cin >> withdrawAmt;
-                
-                g.platinum -= withdrawAmt;
-                cout << "\nNew Balance: " << g.platinum << '\n';
+
+                if (cin.fail()) {
+                    cin.clear(); // clear fail state
+                    cin.ignore(1000, '\n'); // discard bad input
+                    cout << "\nInvalid input. Please enter a number.\n";
+                } else {
+                    if (isValidWithdrawal(withdrawAmt, g.platinum)) {
+                        g.platinum -= withdrawAmt;
+                        cout << "\nNew Balance: " << g.platinum << '\n';
+                    } else {
+                        cout << "\nInvalid withdrawal amount\n";
+                    }
+                }
             }
 
             else if (choice1 == MAIN_MENU) {
@@ -318,4 +329,8 @@ void displayMenu2() {
 
 bool isValidDeposit(int depoAmt, int currentBalance) {
     return (depoAmt > 0) && ((depoAmt + currentBalance) <= MAX_LIMIT);
+}
+
+bool isValidWithdrawal(int withdrawAmt, int currentBalance) {
+    return (withdrawAmt > 0) && (withdrawAmt <= currentBalance);
 }
