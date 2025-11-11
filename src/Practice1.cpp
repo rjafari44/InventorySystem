@@ -10,8 +10,6 @@ using std::cout, std::cin;
    size after. If they want to deposit more than the available space, they will
    be given an size warning, telling them the available space, and the max they
    can do.
-
-
 */
 
 const int MAX_LIMIT{100};
@@ -46,39 +44,36 @@ int main() {
       cin.clear();            // clear fail state
       cin.ignore(1000, '\n'); // discard bad input
       cout << "\nInvalid input. Please enter a number.\n";
-    }
-
-    else {
+    } else {
 
       switch (metalChoice) {
-
-      case PLATINUM: {
-        someFunc(g.platinum);
-        break;
-      }
-      case GOLD: {
-        someFunc(g.gold);
-        break;
-      }
-      case DIAMOND: {
-        someFunc(g.diamond);
-        break;
-      }
-      case SILVER: {
-        someFunc(g.silver);
-        break;
-      }
-      case COPPER: {
-        someFunc(g.copper);
-        break;
-      }
-      case EXIT: {
-        return 0;
-      }
-      default: {
-        cout << "\nPlease select a NUMBER between 1-5!\n";
-        break;
-      }
+        case PLATINUM: {
+          someFunc(g.platinum);
+          break;
+        }
+        case GOLD: {
+          someFunc(g.gold);
+          break;
+        }
+        case DIAMOND: {
+          someFunc(g.diamond);
+          break;
+        }
+        case SILVER: {
+          someFunc(g.silver);
+          break;
+        }
+        case COPPER: {
+          someFunc(g.copper);
+          break;
+        }
+        case EXIT: {
+          return 0;
+        }
+        default: {
+          cout << "\nPlease select a NUMBER between 1-5!\n";
+          break;
+        }
       }
     }
   }
