@@ -116,7 +116,6 @@ void manageInventory(int &metalChoice) {
       cin.clear();            // clear fail state
       cin.ignore(1000, '\n'); // discard bad input
       cout << "Invalid input. Please enter a number.\n";
-      continue;
     } else if (choice1 == DEPOSIT) {
       int depoAmt{};
       cout << "Enter deposit amount: ";
