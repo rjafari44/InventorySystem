@@ -126,15 +126,12 @@ void manageInventory(int &metalChoice) {
         cin.clear();            // clear fail state
         cin.ignore(1000, '\n'); // discard bad input
         cout << "\nInvalid input. Please enter a number.\n";
-        continue;
       } else {
         if (isValidDeposit(depoAmt, metalChoice)) {
           metalChoice += depoAmt;
           cout << "\nNew Balance: " << metalChoice << '\n';
-          continue;
         } else {
           cout << "\nInvalid deposit amount\n";
-          continue;
         }
       }
     }
@@ -148,15 +145,12 @@ void manageInventory(int &metalChoice) {
         cin.clear();            // clear fail state
         cin.ignore(1000, '\n'); // discard bad input
         cout << "\nInvalid input. Please enter a number.\n";
-        continue;
       } else {
         if (isValidWithdrawal(withdrawAmt, metalChoice)) {
           metalChoice -= withdrawAmt;
           cout << "\nNew Balance: " << metalChoice << '\n';
-          continue;
         } else {
           cout << "\nInvalid withdrawal amount\n";
-          continue;
         }
       }
     }
@@ -167,7 +161,6 @@ void manageInventory(int &metalChoice) {
 
     else {
       cout << "Please enter a number between 1-3!\n";
-      continue;
     }
   }
 }
