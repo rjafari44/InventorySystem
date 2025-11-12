@@ -107,9 +107,10 @@ void someFunc(int &metalChoice) {
 
   while (true) {
 
-    cout << "\nCurrent Balance is " << metalChoice;
+    cout << "\nCurrent Balance is " << metalChoice << '\n';
     displayMenu2();
     cin >> choice1;
+    cout << '\n';
 
     if (cin.fail()) {
       cin.clear();            // clear fail state
@@ -118,7 +119,7 @@ void someFunc(int &metalChoice) {
       continue;
     } else if (choice1 == DEPOSIT) {
       int depoAmt{};
-      cout << "\nEnter deposit amount: ";
+      cout << "Enter deposit amount: ";
       cin >> depoAmt;
 
       if (cin.fail()) {
@@ -140,7 +141,7 @@ void someFunc(int &metalChoice) {
 
     else if (choice1 == WITHDRAW) {
       int withdrawAmt{};
-      cout << "\nEnter amount to withdraw: ";
+      cout << "Enter amount to withdraw: ";
       cin >> withdrawAmt;
 
       if (cin.fail()) {
@@ -165,9 +166,8 @@ void someFunc(int &metalChoice) {
     }
 
     else {
-      cout << "\nPlease enter a number between 1-3!\n";
+      cout << "Please enter a number between 1-3!\n";
       continue;
     }
-    break;
   }
 }
