@@ -26,7 +26,7 @@ void displayMenu1();
 void displayMenu2();
 bool isValidDeposit(int depoAmt, int currentBalance);
 bool isValidWithdrawal(int withdrawAmt, int currentBalance);
-void someFunc(int &metalChoice);
+void manageInventory(int &metalChoice);
 
 int main() {
 
@@ -48,19 +48,19 @@ int main() {
 
       switch (metalChoice) {
         case PLATINUM:
-          someFunc(g.platinum);
+          manageInventory(g.platinum);
           break;
         case GOLD:
-          someFunc(g.gold);
+          manageInventory(g.gold);
           break;
         case DIAMOND:
-          someFunc(g.diamond);
+          manageInventory(g.diamond);
           break;
         case SILVER:
-          someFunc(g.silver);
+          manageInventory(g.silver);
           break;
         case COPPER:
-          someFunc(g.copper);
+          manageInventory(g.copper);
           break;
         case EXIT:
           return 0;
@@ -101,7 +101,7 @@ bool isValidWithdrawal(int withdrawAmt, int currentBalance) {
   return (withdrawAmt > 0) && (withdrawAmt <= currentBalance);
 }
 
-void someFunc(int &metalChoice) {
+void manageInventory(int &metalChoice) {
 
   int choice1{};
 
