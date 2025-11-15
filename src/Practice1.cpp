@@ -2,7 +2,6 @@
 #include "header.hpp"
 #include <iostream>
 
-
 using std::cout, std::cin;
 
 const int MAX_LIMIT{100};
