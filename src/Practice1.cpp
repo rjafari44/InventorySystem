@@ -1,32 +1,11 @@
 
+#include "header.hpp"
 #include <iostream>
+
 
 using std::cout, std::cin;
 
-/*
-    I want this inventory to be able to add and decrease from the given category
-   size. The user will be prompted to select the metal they wish to deposit or
-   withdraw to. The user will then be shown the initial inventory size, and the
-   size after. If they want to deposit more than the available space, they will
-   be given an size warning, telling them the available space, and the max they
-   can do.
-*/
-
 const int MAX_LIMIT{100};
-
-struct Inventory {
-  int platinum{}, gold{}, diamond{}, silver{}, copper{};
-};
-
-enum Metals { EXIT, PLATINUM, GOLD, DIAMOND, SILVER, COPPER };
-
-enum Operation { QUIT, DEPOSIT, WITHDRAW, MAIN_MENU };
-
-void displayMenu1();
-void displayMenu2();
-bool isValidDeposit(int depoAmt, int currentBalance);
-bool isValidWithdrawal(int withdrawAmt, int currentBalance);
-void manageInventory(int &metalChoice);
 
 int main() {
 
