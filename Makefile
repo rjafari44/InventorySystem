@@ -1,14 +1,13 @@
 .PHONY: all clean
 
-GCC          := g++
-GCC_VERSION  := -std=c++17
-SRC          := Practice1.cpp
-SRC_DIR 	 := ./src
-EXEC         := test
-HIDDEN_FILES := $(wildcard .*.un~) $(wildcard ./src/.*.un~)
+GCC         := g++
+GCC_VERSION := -std=c++17
+SRC_DIR     := ./src
+SRC         := $(wildcard $(SRC_DIR)/*.cpp)
+EXEC        := test
 
 all:
-	$(GCC) $(GCC_VERSION) $(SRC_DIR)/$(SRC) -o $(EXEC)
+	$(GCC) $(GCC_VERSION) -Iinclude $(SRC) -o $(EXEC)
 
 clean:
-	rm -f $(EXEC) $(HIDDEN_FILES)
+	rm -f $(EXEC)
