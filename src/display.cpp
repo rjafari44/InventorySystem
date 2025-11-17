@@ -1,8 +1,10 @@
 #include "header.hpp"
 #include <iostream>
 
+// to remove need for using std:: for cout
 using std::cout;
 
+// function of void type to display the introduction and rules, takes no arguments
 void displayIntro() {
   cout << "********** Welcome to Ray's Precious Metal Inventory **********\n"
        << "Before getting started, here is a description of what we offer and some things to keep in mind:\n"
@@ -13,6 +15,7 @@ void displayIntro() {
        << "***************************************************************\n\n";
 }
 
+// function of void type to display main menu, takes no arguments
 void displayMenu1() {
 
   cout << "Please select the precious metal you wish to deposit or withdraw from:\n"
@@ -26,6 +29,7 @@ void displayMenu1() {
        << "Enter your choice: ";
 }
 
+// function of void type to display inner menu, takes no arguments
 void displayMenu2() {
   cout << "\nDo you want to deposit or withdraw? "
        << "\n1. Deposit"
@@ -34,6 +38,7 @@ void displayMenu2() {
        << "\nChoice: ";
 }
 
+// function of void type to display total balance of metals, takes variable of Inventory type passed by reference
 void displayTotalBalance(const Inventory& storage){
   cout << "\n***** TOTAL BALANCE *****";
   cout << "\nPlatinum: " << storage.platinum; 

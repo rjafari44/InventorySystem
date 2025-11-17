@@ -24,31 +24,31 @@ int main() {
       cout << "\nInvalid input. Please enter a number.\n";
     } else {
 
-      switch (metalChoice) {
-        case PLATINUM:
-          manageInventory(storage.platinum);
+      switch (metalChoice) {   // switch statement for the different user choice of metal
+        case PLATINUM:         // if user chooses platinum (1)
+          manageInventory(storage.platinum);    // pass the platinum object as argument
           break;
-        case GOLD:
-          manageInventory(storage.gold);
+        case GOLD:             // if user chooses gold (2)
+          manageInventory(storage.gold);       // pass the gold object as argument
           break;
-        case DIAMOND:
-          manageInventory(storage.diamond);
+        case DIAMOND:          // if user chooses diamond (3)
+          manageInventory(storage.diamond);   // pass the diamond object as argument
           break;
-        case SILVER:
-          manageInventory(storage.silver);
+        case SILVER:           // if user chooses silver (4)
+          manageInventory(storage.silver);    // pass the silver object as argument
           break;
-        case COPPER:
-          manageInventory(storage.copper);
+        case COPPER:           // if user chooses copper (5)
+          manageInventory(storage.copper);    // pass the copper object as argument
           break;
-        case BALANCE:
-          displayTotalBalance(storage);
+        case BALANCE:          // if user chooses to display balance (6)
+          displayTotalBalance(storage);       // pass the whole struct object as argument
           break;
-        case EXIT:
+        case EXIT:             // if user chooses to exit (0)
           { 
             cout << "\nThank you for using our services!\n";
             return 0;
           }
-        default:
+        default:              // default case in case user does not choose the right number
           cout << "\nPlease select a NUMBER between 1-5!\n";
           break;
       }
