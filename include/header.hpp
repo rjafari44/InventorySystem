@@ -4,18 +4,20 @@
 inline const int MAX_LIMIT{100};
 
 struct Inventory {
-  int platinum{}, gold{}, diamond{}, silver{}, copper{};
+  float platinum{}, gold{}, diamond{}, silver{}, copper{};
 };
 
-enum Metals { EXIT, PLATINUM, GOLD, DIAMOND, SILVER, COPPER };
+enum Metals { EXIT, PLATINUM, GOLD, DIAMOND, SILVER, COPPER, BALANCE };
 
 enum Operation { QUIT, DEPOSIT, WITHDRAW, MAIN_MENU };
 
+void displayIntro();
 void displayMenu1();
 void displayMenu2();
-bool isValidDeposit(int depoAmt, int currentBalance);
-bool isValidWithdrawal(int withdrawAmt, int currentBalance);
-void manageInventory(int &metalChoice);
+bool isValidDeposit(float depoAmt, float currentBalance);
+bool isValidWithdrawal(float withdrawAmt, float currentBalance);
+void manageInventory(float &metalChoice);
+void displayTotalBalance(const Inventory& storage);
 
 
 #endif

@@ -4,14 +4,12 @@
 
 using std::cout, std::cin;
 
-const int MAX_LIMIT{100};
-
 int main() {
 
   int metalChoice{};
-  Inventory g;
+  Inventory storage;
 
-  cout << "Welcome to Ray's Inventory\n";
+  displayIntro();
 
   while (true) {
 
@@ -26,22 +24,28 @@ int main() {
 
       switch (metalChoice) {
         case PLATINUM:
-          manageInventory(g.platinum);
+          manageInventory(storage.platinum);
           break;
         case GOLD:
-          manageInventory(g.gold);
+          manageInventory(storage.gold);
           break;
         case DIAMOND:
-          manageInventory(g.diamond);
+          manageInventory(storage.diamond);
           break;
         case SILVER:
-          manageInventory(g.silver);
+          manageInventory(storage.silver);
           break;
         case COPPER:
-          manageInventory(g.copper);
+          manageInventory(storage.copper);
+          break;
+        case BALANCE:
+          displayTotalBalance(storage);
           break;
         case EXIT:
-          return 0;
+          { 
+            cout << "\nThank you for using our services!\n";
+            return 0;
+          }
         default:
           cout << "\nPlease select a NUMBER between 1-5!\n";
           break;

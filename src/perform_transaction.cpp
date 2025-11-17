@@ -3,24 +3,24 @@
 
 using std::cin, std::cout;
 
-void manageInventory(int &metalChoice) {
+void manageInventory(float &metalChoice) {
 
-  int choice1{};
+  int innerChoice{};
+  cout << "\nCurrent Balance is " << metalChoice << '\n';
 
   while (true) {
 
-    cout << "\nCurrent Balance is " << metalChoice << '\n';
     displayMenu2();
-    cin >> choice1;
+    cin >> innerChoice;
     cout << '\n';
 
     if (cin.fail()) {
       cin.clear();            // clear fail state
       cin.ignore(1000, '\n'); // discard bad input
       cout << "Invalid input. Please enter a number.\n";
-    } else if (choice1 == DEPOSIT) {
-      int depoAmt{};
-      cout << "Enter deposit amount: ";
+    } else if (innerChoice == DEPOSIT) {
+      float depoAmt{};
+      cout << "Enter deposit amount in kg: ";
       cin >> depoAmt;
 
       if (cin.fail()) {
@@ -30,16 +30,16 @@ void manageInventory(int &metalChoice) {
       } else {
         if (isValidDeposit(depoAmt, metalChoice)) {
           metalChoice += depoAmt;
-          cout << "\nNew Balance: " << metalChoice << '\n';
+          cout << "\nNew Balance: " << metalChoice << "kg\n";
         } else {
           cout << "\nInvalid deposit amount\n";
         }
       }
     }
 
-    else if (choice1 == WITHDRAW) {
-      int withdrawAmt{};
-      cout << "Enter amount to withdraw: ";
+    else if (innerChoice == WITHDRAW) {
+      float withdrawAmt{};
+      cout << "Enter amount to withdraw in kg: ";
       cin >> withdrawAmt;
 
       if (cin.fail()) {
@@ -49,14 +49,14 @@ void manageInventory(int &metalChoice) {
       } else {
         if (isValidWithdrawal(withdrawAmt, metalChoice)) {
           metalChoice -= withdrawAmt;
-          cout << "\nNew Balance: " << metalChoice << '\n';
+          cout << "\nNew Balance: " << metalChoice << "kg\n";
         } else {
           cout << "\nInvalid withdrawal amount\n";
         }
       }
     }
 
-    else if (choice1 == MAIN_MENU) {
+    else if (innerChoice == MAIN_MENU) {
       break;
     }
 
