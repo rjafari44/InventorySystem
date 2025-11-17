@@ -1,6 +1,8 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+inline const int MAX_LIMIT{100};
+
 struct Inventory {
   int platinum{}, gold{}, diamond{}, silver{}, copper{};
 };
