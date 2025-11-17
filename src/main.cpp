@@ -2,21 +2,23 @@
 #include "header.hpp"
 #include <iostream>
 
+// to remove the need for adding std:: everytime I want to use cout and cin
 using std::cout, std::cin;
 
+// main function
 int main() {
 
-  int metalChoice{};
-  Inventory storage;
+  int metalChoice{};   // option variable for the menu
+  Inventory storage;   // object for variable of type Inventory
 
-  displayIntro();
+  displayIntro();      // display the introduction and instructions
 
-  while (true) {
+  while (true) {       // while loop for repeating the program
 
-    displayMenu1();
+    displayMenu1();    // display first menu
     cin >> metalChoice;
 
-    if (cin.fail()) {
+    if (cin.fail()) {    // input validation check for inputting letters
       cin.clear();            // clear fail state
       cin.ignore(1000, '\n'); // discard bad input
       cout << "\nInvalid input. Please enter a number.\n";
