@@ -18,37 +18,37 @@ int main() {
     displayMenu1();    // display first menu
     cin >> metalChoice;
 
-    if (cin.fail()) {    // input validation check for inputting letters
+    if (cin.fail()) {         // input validation check for inputting letters
       cin.clear();            // clear fail state
       cin.ignore(1000, '\n'); // discard bad input
       cout << "\nInvalid input. Please enter a number.\n";
     } else {
 
-      switch (metalChoice) {
-        case PLATINUM:
-          manageInventory(storage.platinum);
+      switch (metalChoice) {    // switch statement for selected metal
+        case PLATINUM:                         // if user selects platinum
+          manageInventory(storage.platinum);   // perform inventory transaction for platinum
           break;
-        case GOLD:
-          manageInventory(storage.gold);
+        case GOLD:                             // if user selects gold
+          manageInventory(storage.gold);       // perform inventory transaction for gold
           break;
-        case DIAMOND:
-          manageInventory(storage.diamond);
+        case DIAMOND:                          // if user selects diamond
+          manageInventory(storage.diamond);    // perform inventory transaction for diamond
           break;
-        case SILVER:
-          manageInventory(storage.silver);
+        case SILVER:                           // if user selects silver
+          manageInventory(storage.silver);     // perform inventory transaction for silver
           break;
-        case COPPER:
-          manageInventory(storage.copper);
+        case COPPER:                           // if user selects copper
+          manageInventory(storage.copper);     // perform inventory transaction for copper
           break;
-        case BALANCE:
-          displayTotalBalance(storage);
+        case BALANCE:                          // if user selects to display the balance
+          displayTotalBalance(storage);        // display the total balance
           break;
-        case EXIT:
-          { 
+        case EXIT:                             // if user chooses to exit the program
+          {
             cout << "\nThank you for using our services!\n";
             return 0;
           }
-        default:
+        default:                               // default case to protect against wrong numbers
           cout << "\nPlease select a NUMBER between 1-5!\n";
           break;
       }

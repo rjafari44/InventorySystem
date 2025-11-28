@@ -1,8 +1,10 @@
 #include "header.hpp"
 #include <iostream>
 
+// to remove the need for adding std:: everytime I want to use cout and cin
 using std::cout;
 
+// function to display the intro/guidelines, returns nothing
 void displayIntro() {
   cout << "********** Welcome to Ray's Precious Metal Inventory **********\n"
        << "Before getting started, here is a description of what we offer and some things to keep in mind:\n"
@@ -13,6 +15,7 @@ void displayIntro() {
        << "***************************************************************\n\n";
 }
 
+// function to display the first main menu, returns nothing
 void displayMenu1() {
 
   cout << "Please select the precious metal you wish to deposit or withdraw from:\n"
@@ -26,6 +29,7 @@ void displayMenu1() {
        << "Enter your choice: ";
 }
 
+// function to display the second inner menu, returns nothing
 void displayMenu2() {
   cout << "\nDo you want to deposit or withdraw? "
        << "\n1. Deposit"
@@ -34,6 +38,7 @@ void displayMenu2() {
        << "\nChoice: ";
 }
 
+// function to display the total user balance, returns nothing
 void displayTotalBalance(const Inventory& storage){
   cout << "\n***** TOTAL BALANCE *****";
   cout << "\nPlatinum: " << storage.platinum; 
