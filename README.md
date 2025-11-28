@@ -6,7 +6,7 @@
 
 ### How to run
 
-#### This program has two ways in which it can be ran (three if you manually do it). Makefile and shell script. 
+#### This program has two ways in which it can be ran (three if you manually do it). Makefile and shell script. Note that if you use the make file, you should clean it up to protect against any old executibles.
 
 ### Using Makefile
 ```bash

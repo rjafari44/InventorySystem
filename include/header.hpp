@@ -1,5 +1,4 @@
-#ifndef HEADER_H
-#define HEADER_H
+#pragma once
 
 // global variable for max storage amount allowed
 inline const int MAX_LIMIT{100};
@@ -24,6 +23,3 @@ bool isValidDeposit(float depoAmt, float currentBalance);
 bool isValidWithdrawal(float withdrawAmt, float currentBalance);
 void manageInventory(float &metalChoice);
 void displayTotalBalance(const Inventory& storage);
-
-
-#endif
