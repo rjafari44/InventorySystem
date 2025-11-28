@@ -10,12 +10,15 @@ INCLUDE_DIR="-Iinclude"
 EXEC="test"
 
 echo "Building..."
+echo
 $GCC $CXXFLAGS $INCLUDE_DIR "${SRC_FILES[@]}" -o "$EXEC"
 
 if [[ $? -eq 0 ]]; then
     echo "Build successful: ./$EXEC"
+    echo
     ./$EXEC
 else
     echo "Build failed!"
+    echo
     exit 1
 fi
