@@ -30,8 +30,8 @@ void displayMenu1() {
 }
 
 // function to display the second inner menu, returns nothing
-void displayMenu2() {
-  cout << "\nDo you want to deposit or withdraw? "
+void displayMenu2(const std::string &metalName) {
+  cout << "\nDo you want to deposit or withdraw " << metalName << "?"
        << "\n1. Deposit"
        << "\n2. Withdraw"
        << "\n3. Main Menu"

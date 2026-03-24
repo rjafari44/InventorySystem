@@ -26,19 +26,19 @@ int main() {
 
       switch (metalChoice) {    // switch statement for selected metal
         case PLATINUM:                         // if user selects platinum
-          manageInventory(storage.platinum);   // perform inventory transaction for platinum
+          manageInventory(storage.platinum, "platinum");   // perform inventory transaction for platinum
           break;
         case GOLD:                             // if user selects gold
-          manageInventory(storage.gold);       // perform inventory transaction for gold
+          manageInventory(storage.gold, "gold");       // perform inventory transaction for gold
           break;
         case DIAMOND:                          // if user selects diamond
-          manageInventory(storage.diamond);    // perform inventory transaction for diamond
+          manageInventory(storage.diamond, "diamond");    // perform inventory transaction for diamond
           break;
         case SILVER:                           // if user selects silver
-          manageInventory(storage.silver);     // perform inventory transaction for silver
+          manageInventory(storage.silver, "silver");     // perform inventory transaction for silver
           break;
         case COPPER:                           // if user selects copper
-          manageInventory(storage.copper);     // perform inventory transaction for copper
+          manageInventory(storage.copper, "copper");     // perform inventory transaction for copper
           break;
         case BALANCE:                          // if user selects to display the balance
           displayTotalBalance(storage);        // display the total balance

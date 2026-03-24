@@ -1,5 +1,7 @@
 #pragma once
 
+#include <string>
+
 // global variable for max storage amount allowed
 inline const int MAX_LIMIT{100};
 
@@ -18,8 +20,8 @@ enum Operation { QUIT, DEPOSIT, WITHDRAW, MAIN_MENU };
 // function declarations
 void displayIntro();
 void displayMenu1();
-void displayMenu2();
+void displayMenu2(const std::string &metalName);
 bool isValidDeposit(float depoAmt, float currentBalance);
 bool isValidWithdrawal(float withdrawAmt, float currentBalance);
-void manageInventory(float &metalChoice);
+void manageInventory(float &metalChoiceBal, const std::string &metalName);
 void displayTotalBalance(const Inventory& storage);
