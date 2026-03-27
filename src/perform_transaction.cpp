@@ -1,4 +1,4 @@
-#include "header.hpp"
+#include "common.hpp"
 #include <iostream>
 
 // to remove the need for adding std:: everytime I want to use cout and cin
