@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <iostream>
 
 // global variable for max storage amount allowed
 inline const int MAX_LIMIT{100};

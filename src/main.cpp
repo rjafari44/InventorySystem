@@ -1,5 +1,4 @@
 #include "common.hpp"
-#include <iostream>
 
 // to remove the need for adding std:: everytime I want to use cout and cin
 using std::cout, std::cin;
